@@ -1,18 +1,11 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class AccountView extends StatefulWidget {
-  const AccountView({super.key, required this.title});
+class AccountView extends StatelessWidget {
+  const AccountView({super.key});
 
-  final String title;
-
-  @override
-  State<AccountView> createState() => _AccountViewState();
-}
-
-class _AccountViewState extends State<AccountView> {
   Future<String?> addCodeStorage() async {
     AndroidOptions getAndroidOptions() => const AndroidOptions(
           encryptedSharedPreferences: true,
@@ -26,7 +19,7 @@ class _AccountViewState extends State<AccountView> {
 
   String _randomValue() {
     final rand = Random();
-    final codeUnits = List.generate(20, (index) {
+    final codeUnits = List.generate(50, (index) {
       return rand.nextInt(26) + 65;
     });
 
@@ -36,22 +29,23 @@ class _AccountViewState extends State<AccountView> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Center(
-        child: Column(
-          children: [
-            Text(widget.title),
-            FutureBuilder(
-                future: addCodeStorage(),
-                builder: (context, snapshot) {
-                  if (snapshot.hasError) {
-                    const SizedBox.shrink();
-                  }
-                  return snapshot.hasData
-                      ? Center(child: Text(snapshot.data!))
-                      : const Text("oups...impossible de récupérer le code");
-                })
-          ],
-        ),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      child: Column(
+        children: [
+          const ListTile(
+            title: Text("Connexion"),
+          ),
+          const SizedBox(height: 15),
+          TextFormField(),
+          const SizedBox(height: 15),
+          TextFormField(),
+          const SizedBox(height: 35),
+          ElevatedButton(onPressed: () {
+            _randomValue();
+
+          }, child: const Text('Me connecter')),
+          const SizedBox(height: 15),
+        ],
       ),
     );
   }

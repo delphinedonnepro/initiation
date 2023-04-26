@@ -17,7 +17,7 @@ class CustomBottomBar extends StatelessWidget{
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute (
-                  builder: (BuildContext context) => const AccountView(title: "ecran 1"),
+                  builder: (BuildContext context) => const AccountView(),
                 ),
               );
             },
@@ -27,7 +27,7 @@ class CustomBottomBar extends StatelessWidget{
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute (
-                  builder: (BuildContext context) => const AccountView(title: "ecran 2"),
+                  builder: (BuildContext context) => const AccountView(),
                 ),
               );
             },
@@ -37,7 +37,7 @@ class CustomBottomBar extends StatelessWidget{
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute (
-                  builder: (BuildContext context) => const AccountView(title: "ecran 3"),
+                  builder: (BuildContext context) => const AccountView(),
                 ),
               );
             },
@@ -47,7 +47,7 @@ class CustomBottomBar extends StatelessWidget{
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute (
-                  builder: (BuildContext context) => const AccountView(title: "ecran 4"),
+                  builder: (BuildContext context) => const AccountView(),
                 ),
               );
             },
