@@ -15,7 +15,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   //AndroidOptions _getAndroidOptions() => const AndroidOptions(encryptedSharedPreferences: true);
-  //IOSOptions getIOSOptions() => const IOSOptions(accessibility: KeychainAccessibility.unlocked);
   final _storage = const FlutterSecureStorage(aOptions: AndroidOptions(encryptedSharedPreferences: true));
 
   Future<String?> addCodeStorage() async {
