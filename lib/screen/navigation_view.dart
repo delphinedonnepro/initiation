@@ -16,13 +16,7 @@ class NavigationView extends StatefulWidget {
 class _NavigationViewState extends State<NavigationView> {
   int _selectedIndex = 0;
 
-  static List<Person> listPerson = [
-    Person(nom: "Martin", prenom: "Paul", age: 5),
-    Person(nom: "Martin", prenom: "David", age: 39),
-    Person(nom: "Dupont", prenom: "Caroline", age: 35),
-    Person(nom: "Dupont", prenom: "Sarah", age: 35),
-    Person(nom: "Martin-Dupont", prenom: "Rex", age: 2),
-  ];
+  static List<Person> listPerson = [];
 
   List<Widget> widgetOptions = <Widget>[
     const HomeView(title: "Accueil"),
